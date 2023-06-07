@@ -16,6 +16,7 @@ public class AddNoteActivity extends AppCompatActivity {
     private RadioButton radioButtonLow;
     private RadioButton radioButtonMedium;
     private Button buttonSave;
+    private Database database = Database.getInstance();
 
 
     @Override
@@ -54,6 +55,11 @@ public class AddNoteActivity extends AppCompatActivity {
     private void saveNote(){
         String text = editTextNote.getText().toString();
         int priority = getPriority();
+        int id = database.getNotes().size();
+        Note note = new Note(id, text, priority);
+        database.getNotes().add(note);
+
+        finish();
     }
 
     public static Intent newIntent(Context context){
