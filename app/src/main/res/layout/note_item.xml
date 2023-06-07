@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TextViewNote"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/material_dynamic_neutral_variant20"
+    tools:text="Hello"
+    tools:background="@android:color/holo_green_light"
+    android:textSize="16sp"
+    android:padding="16dp"
+    android:layout_margin="8dp"/>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Todo List</string>
+    <string name="contentDescription">Это работает</string>
+    <string name="contentDescriptionButton">Это описание</string>
+    <string name="note_hint">Введите текст заметки</string>
+    <string name="low">низкий</string>
+    <string name="medium">средний</string>
+    <string name="High">высокий</string>
+    <string name="save">сохранить</string>
+</resources>
