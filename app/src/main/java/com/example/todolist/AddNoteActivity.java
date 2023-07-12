@@ -53,11 +53,11 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void saveNote(){
-        String text = editTextNote.getText().toString();
+        String text = editTextNote.getText().toString().trim();
         int priority = getPriority();
         int id = database.getNotes().size();
         Note note = new Note(id, text, priority);
-        database.getNotes().add(note);
+        database.add(note);
 
         finish();
     }

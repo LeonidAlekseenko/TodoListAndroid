@@ -2,6 +2,7 @@ package com.example.todolist;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    View LinearLayoutNotes;
+    private RecyclerView recyclerViewNotes;
+
+    private NotesAdapter notesAdapter;
     View ButtonAddNote;
     Database database = Database.getInstance();
 
@@ -34,31 +37,12 @@ public class MainActivity extends AppCompatActivity {
         showNotes();
     }
     private void initView() {
-        LinearLayoutNotes = findViewById(R.id.LinearLayoutNotes);
+        recyclerViewNotes = findViewById(R.id.RecyclerViewNotes);
         ButtonAddNote = findViewById(R.id.ButtonAddNote);
     }
 
     private void showNotes(){
-        ((ViewGroup)LinearLayoutNotes).removeAllViews();
-        for (Note note : database.getNotes()) {
-            View view = getLayoutInflater().inflate(R.layout.note_item, (ViewGroup) LinearLayoutNotes, false);
-            TextView TextViewNote = view.findViewById(R.id.TextViewNote);
-            TextViewNote.setText(note.getText());
-            int colorResId;
-            switch (note.getPriority()) {
-                case 0:
-                    colorResId = android.R.color.holo_green_light;
-                    break;
-                case 1:
-                    colorResId = android.R.color.holo_orange_light;
-                    break;
-                default:
-                    colorResId = android.R.color.holo_red_light;
-            }
-            ((ViewGroup) LinearLayoutNotes).addView(view);
-            int color = ContextCompat.getColor(this, colorResId);
-            TextViewNote.setBackgroundColor(color);
-        }
+
     }
 
 }

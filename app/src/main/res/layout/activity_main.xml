@@ -7,18 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/contentDescription">
-
-        <LinearLayout
-            android:id="@+id/LinearLayoutNotes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="MissingConstraints" />
-    </ScrollView>
+ <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/RecyclerViewNotes"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ButtonAddNote"
